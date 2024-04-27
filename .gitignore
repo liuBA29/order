@@ -1,0 +1,5 @@
+.idea/
+ordervenv/
+my_order/db.sqlite3
+db.*
+*.pyc
