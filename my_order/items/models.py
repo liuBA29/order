@@ -1,14 +1,20 @@
 from django.db import models
+from mptt.models import MPTTModel, TreeForeignKey
 
 
 
 class Furniture(models.Model):
     slug = models.SlugField(max_length=25, db_index=True, unique=True, verbose_name='furniture')
-    details = models.CharField(max_length=115)
+    details = models.CharField(max_length=115, blank=True, null=True)
+
     photo = models.ImageField(upload_to="photos/furniture/%Y/%m/", blank=True, null=True)
 
     def __str__(self):
         return self.slug
+
+
+
+
 
 class TheItem(models.Model):
     name = models.CharField(max_length=35)
