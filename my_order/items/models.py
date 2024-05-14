@@ -24,6 +24,7 @@ class TheItem(models.Model):
     time_create = models.DateTimeField(auto_now_add=True, verbose_name="Time create")
     time_update = models.DateTimeField(auto_now=True, verbose_name="time of last update")
     photo = models.ImageField(upload_to="photos/items/%Y/%m/")
+    is_actual = models.BooleanField(default=True)
 
     def __str__(self):
         return self.name

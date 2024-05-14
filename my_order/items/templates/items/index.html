@@ -1,0 +1,16 @@
+{% extends 'items/base.html' %}
+{% block content %}
+<ul>
+{% for i in items %}
+
+    <li>
+        <h2>{{i.name}}</h2>
+        <p>{{i.location_id}}</p>
+        {% if i.photo %}
+        <p><img src="{{i.photo.url}}" alt=""></p>
+        {% endif %}
+        <hr>
+    </li>
+{% endfor %}
+</ul>
+{% endblock %}
